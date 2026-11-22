@@ -105,6 +105,6 @@ make -C sf2000_multicore FROGGY_TYPE=GB300V2 CORE=path/to/nzp_core
 
 - **Nazi Zombies: Portable Team**: Original NZ:P project, assets, and QuakeC implementation.
 - **Id Software**: Original Quake engine code.
-- **Data Frog / GB300 Port & Optimization**: Synaps33 & OpenCode contributors.
+- **Data Frog / GB300 Port & Optimization**: Synaps33.
 
 Licensed under the GNU General Public License (GPLv2).
