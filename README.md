@@ -1,75 +1,110 @@
-# Nazi Zombies: Portable
+# FroggyZombies (Nazi Zombies: Portable for Data Frog SF2000 & GB300)
 
-# About
-This is the main/hub repository for NZ:P, a Call of Duty: Zombies "de-make" powered by various enhanced forks of the Quake engine, in development since 2009. This hub repository serves as a place to host nightly builds as well as a means of bug reporting on a game-wide (non-component) scale. See [the breakdown](#github-organization-breakdown) for source code and other components.
+**FroggyZombies** is a port of **Nazi Zombies: Portable** (the classic Call of Duty: Zombies de-make built on the Quake / Vril engine) specifically optimized for the **Data Frog SF2000** and **GB300 / GB300V2** handheld consoles.
 
-The game itself is feature-equivalent with Call of Duty: World at War on a generic level. Gameplay components are implemented with minor parity differences. Most World at War maps and their unique features are not yet represented. Various small additions and changes from Call of Duty: Black Ops are present as a means of gameplay smoothing, but not on a wide scale. NZ:P is, first and foremost, a Call of Duty: World at War remake.
+Enjoy round-based zombie survival on low-cost MIPS32 handhelds with pure soft-float calculations, custom controls, and a smooth 25–30 FPS experience.
 
-# Supported Platforms
-* Linux (x86, x86_64, armhf, arm64)
-* Nintendo Switch
-* Nintendo 3DS
-* PlayStation Portable (both "PHAT" (PSP-1000) and "SLIM" (PSP-2000 and higher))
-* PlayStation 2
-* PlayStation 3
-* PlayStation 4
-* PlayStation VITA
-* [WebGL](https://nzp.gay)
-* Windows (x86, x86_64)
-* Xbox (2001)
-* Xbox 360
-* TI NSPIRE (CX II)
+---
 
-# GitHub Organization Breakdown
-* [assets](https://github.com/nzp-team/assets): Game GFX, Sound, etc. data.
-* [vril-engine](https://github.com/nzp-team/vril-engine): The NZ:P engine.
-* [quakec](https://github.com/nzp-team/quakec): The game-side code for things like weapons and Perk machines.
-* [tools](https://github.com/nzp-team/tools): Misc. development tools.
-* [toolbox](https://github.com/nzp-team/toolbox): AiO Development suite for map makers and contributors.
+## Screenshots
 
-# Screenshots
+| Main Menu | Pre-Game Lobby |
+|:---:|:---:|
+| ![Main Menu](screenshots/01_main_menu.png) | ![Lobby](screenshots/02_lobby.png) |
 
-<center>
-    <p float="left">
-        <img src="screenshots/0.webp" width="400" />
-        <img src="screenshots/1.webp" width="400" /> 
-    </p>
-    <p float="left">
-        <img src="screenshots/2.webp" width="400" />
-        <img src="screenshots/3.webp" width="400" /> 
-    </p>
-</center>
+| Video Options (Resolution Scale) | In-Game Action (Nacht der Untoten) |
+|:---:|:---:|
+| ![Video Options](screenshots/03_video_options.png) | ![Gameplay](screenshots/04_gameplay_ndu_75pct.png) |
 
-# Credits
+---
 
-#### Programming
-Blubswillrule, Jukki, DR_Mabuse1981, Naievil, Cypress, Scatterbox
+## Highlights & Features
 
-#### Models
-Blubswillrule, Ju\[s]tice, Derped_Crusader
+- **Pure MIPS32 Soft-Float Engine**: Optimized for Ingenic JZ4725B / XBurst CPUs without hardware FPU (`-msoft-float`, fixed-point transformations).
+- **Native 320x240 RGB565 Output**: Direct 16-bit video streaming via libretro interface.
+- **In-Game 3D Resolution Scale Slider**:
+  - Found under **CONFIGURATION -> VIDEO -> RESOLUTION SCALE**.
+  - Adjust 3D world rendering resolution from **50% to 100%** on the fly (press **A** or **D-Pad Left/Right**).
+  - Keeps the 2D HUD, ammo counters, crosshair, and menus crystal-clear at native 320x240 while rendering 3D graphics faster to hit a solid **25–30 FPS**!
+- **Split Packfile Architecture (<32 MB)**: Bypasses the SF2000/GB300 FAT32 driver 32 MB file seek limitation (`nzp.pak`, `nzp2.pak`, `nzp_sounds.pak`).
+- **Complete Gameplay Mechanics**:
+  - Rounds, barriers & rebuilding, mystery box with weapons.
+  - Perks-a-Cola machines, Power-ups (Max Ammo, Insta-kill, Double Points, Nuke, Carpenter).
+  - Hellhound dog rounds, crawler zombies, point scoring.
+  - Full sound effects intact (weapons, reloads, zombie groans, announcements).
 
-#### GFX
-Blubswillrule, Ju\[s]tice, Cypress, Derped_Crusader
+---
 
-#### Sounds/Music
-Blubswillrule, Biodude, Cypress, Marty P.
+## Quick Installation Guide (Ready to Play)
 
-#### Special Thanks
-* Spike, Eukara, Contributors: FTEQW
-* Shpuld: CleanQC4FTE, heavy dQuakePlus optimization
-* Crow_Bar, st1x51: (a)dQuake(plus)
-* fgsfdsfgs: Quakespasm-NX
-* MasterFeizz: ctrQuake
-* Rinnegatamante: Initial VITA port, VITA Auto-Updater
-* Ralf Willenbacher: nQuake
-* Azenn: GFX Assistance
-* BCDeshiG: Extensive Testing
+1. Go to the [Releases](https://github.com/synaps33/froggyzombies/releases) page.
+2. Download **`froggyzombies-v1.0.0-sd.zip`**.
+3. Plug your handheld console's MicroSD card into your computer.
+4. Extract the contents of the ZIP file directly onto the **root** of your SD card.
+   - It will place files into `/ROMS/nzp/` and `/system/Deimos/cores/`.
+5. Safely eject the SD card and insert it back into your **SF2000** or **GB300**.
+6. Turn on the console, navigate to the **ROMS** or **User / GBA** section, and launch **NZPortable**.
 
-# Stars
-<a href="https://www.star-history.com/?repos=nzp-team%2Fnzportable%2Cnzp-team%2Fvril-engine%2Cnzp-team%2Fquakec%2Cnzp-team%2Fassets%2Cnzp-team%2Fnzp-team.github.io&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=nzp-team/nzportable%2Cnzp-team/vril-engine%2Cnzp-team/quakec%2Cnzp-team/assets%2Cnzp-team/nzp-team.github.io&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=nzp-team/nzportable%2Cnzp-team/vril-engine%2Cnzp-team/quakec%2Cnzp-team/assets%2Cnzp-team/nzp-team.github.io&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=nzp-team/nzportable%2Cnzp-team/vril-engine%2Cnzp-team/quakec%2Cnzp-team/assets%2Cnzp-team/nzp-team.github.io&type=date&legend=top-left" />
- </picture>
-</a>
+---
+
+## Controls
+
+The control layout is tailored for comfortable handheld play:
+
+| Button | Action |
+|:---|:---|
+| **D-Pad Up** | Walk forward |
+| **D-Pad Down** | Walk backward |
+| **D-Pad Left** | Strafe left |
+| **D-Pad Right** | Strafe right |
+| **A Button** | Look right / Confirm menu item |
+| **Y Button** | Look left / Cancel menu item |
+| **X Button** | Look up |
+| **B Button** | Look down |
+| **R Trigger** | Shoot / Attack |
+| **L Trigger** | Aim Down Sights (ADS) |
+| **Select Button** | Use / Interact / Rebuild barriers |
+| **Start Button** | Pause menu |
+
+*Tip: When inside the menus, use the D-Pad to highlight an option, and press **A** to select.*
+
+---
+
+## Performance Tips
+
+To get the smoothest performance:
+1. From the Main Menu, go to **CONFIGURATION** -> **VIDEO**.
+2. Find **RESOLUTION SCALE**:
+   - Default is **75%** (great balance of sharpness and speed).
+   - Set to **60%** or **50%** for maximum frame rate (steady 30 FPS).
+   - You can cycle values by pressing **A** or fine-tune with **D-Pad Left / Right**.
+3. Settings are saved automatically upon change and exit.
+
+---
+
+## Building from Source
+
+To compile the core yourself, you need the MIPS toolchain (`mips-mti-elf`):
+
+```bash
+# Build the libretro static core for SF2000 / GB300
+make sf2000
+
+# Or build the native Linux shared library for PC testing
+make
+```
+
+To create the final `.gb3k` / `.sf2k` multicore executable, link `nzp_libretro_sf2000.a` with the SF2000 multicore wrapper:
+```bash
+make -C sf2000_multicore FROGGY_TYPE=GB300V2 CORE=path/to/nzp_core
+```
+
+---
+
+## Credits & License
+
+- **Nazi Zombies: Portable Team**: Original NZ:P project, assets, and QuakeC implementation.
+- **Id Software**: Original Quake engine code.
+- **Data Frog / GB300 Port & Optimization**: Synaps33 & OpenCode contributors.
+
+Licensed under the GNU General Public License (GPLv2).

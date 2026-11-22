@@ -1,3 +1,12 @@
-# flatpak build files
-.flatpak-builder
-build-dir
+# Build artifacts
+*.o
+*.a
+*.so
+*.elf
+*.bin
+*.map
+*.ppm
+build/
+dist/
+.DS_Store
+*.tmp
