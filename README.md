@@ -6,17 +6,7 @@ Enjoy round-based zombie survival on low-cost MIPS32 handhelds with pure soft-fl
 
 ---
 
-## Screenshots
 
-| Main Menu | Pre-Game Lobby |
-|:---:|:---:|
-| ![Main Menu](screenshots/01_main_menu.png) | ![Lobby](screenshots/02_lobby.png) |
-
-| Video Options (Resolution Scale) | In-Game Action (Nacht der Untoten) |
-|:---:|:---:|
-| ![Video Options](screenshots/03_video_options.png) | ![Gameplay](screenshots/04_gameplay_ndu_75pct.png) |
-
----
 
 ## Highlights & Features
 
